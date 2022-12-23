@@ -169,7 +169,7 @@ class ReverseDiagonalIteratorTest {
     void oneSize1RowOneSize2Column() {
         String[][] elements = {
                 {"Humpty"},
-                {"Hunky"}};
+                {"Hunky", "Dory"}};
         var iterator = new ReverseDiagonalIterator<>(elements);
 
         assertTrue(iterator.hasNext());
@@ -177,6 +177,9 @@ class ReverseDiagonalIteratorTest {
 
         assertTrue(iterator.hasNext());
         assertEquals("Hunky", iterator.next());
+
+        assertTrue(iterator.hasNext());
+        assertEquals("Dory", iterator.next());
 
         assertFalse(iterator.hasNext());
     }
